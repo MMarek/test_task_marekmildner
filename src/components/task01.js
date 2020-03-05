@@ -3,21 +3,21 @@ import React, {Component} from "react";
 
 // let url = "https://recruitment.hal.skygate.io/companies";
 
-$(function () {
-        const Url = "https://recruitment.hal.skygate.io/companies";
-
-        const id = $('id');
-        const name = $('name');
-        const city = $('city');
-
-        function createTable(table) {
-
-            const id = $('<span>').text(id);
-            const name = $('<span>').text(name);
-            const city = $('<span>').text(city);
-        }
-    }
-)
+// $(function () {
+//         const Url = "https://recruitment.hal.skygate.io/companies";
+//
+//         const id = $('id');
+//         const name = $('name');
+//         const city = $('city');
+//
+//         function createTable(table) {
+//
+//             const id = $('<span>').text(id);
+//             const name = $('<span>').text(name);
+//             const city = $('<span>').text(city);
+//         }
+//     }
+// )
 
 
 // class Companies extends Component {
@@ -96,12 +96,19 @@ class Companies extends Component {
     }
 
     loadInfo() {
-        fetch(Api)
+        fetch('https://recruitment.hal.skygate.io/companies')
             .then(response => {
-                console.log(response.id);
+                if (response.ok) {
+                    console.log(response.id);
+                    return response.json()
+                } else {
+                    throw new Error('Error during fetching data');
+                }
+            })
+                // console.log(response.id);
                 // console.log(response.name);
                 // console.log(response.city);
-            })
+            // })
             .catch(err => err.log(err))
     }
 
