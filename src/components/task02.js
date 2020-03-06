@@ -10,7 +10,7 @@ export default class FetchId extends React.Component {
         const url = "https://recruitment.hal.skygate.io/companies";
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({city: data.results[1] , loading: false});
+        this.setState({city: data.results[0] , loading: false});
         // console.log(data.result[0]);
     };
 
