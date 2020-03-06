@@ -29,8 +29,8 @@ export default class FetchId extends React.Component {
     }
 }
 
-// function Task02() {
+// function Temp02() {
 //     return <Companies id/>
 // }
 //
-// export default Task02;
+// export default Temp02;

@@ -36,8 +36,8 @@ class FetchExample extends Component {
     }
 }
 
-function Task04() {
+function Temp04() {
     return <FetchExample/>
 }
 
-export default Task04;
+export default Temp04;

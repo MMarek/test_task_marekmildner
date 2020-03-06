@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-// import Task01 from "./task01";
-import Task02 from "./task02";
-// import Task04 from "./task04";
+// import Temp01 from "./temp01";
+// import Temp02 from "./temp02";
+// import Temp04 from "./temp04";
+import table from "./table";
 
 
 class Home extends Component{
@@ -9,9 +10,9 @@ class Home extends Component{
     render() {
         return (
             <>
-                {/*<Task01/>*/}
-                <Task02/>
-                {/*<Task04/>*/}
+                {/*<Temp01/>*/}
+                {/*<Temp02/>*/}
+                {/*<Temp04/>*/}
             </>
         );
     }

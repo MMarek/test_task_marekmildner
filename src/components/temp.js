@@ -168,8 +168,8 @@ class TableForm extends Component {
 }
 
 
-function Task01() {
+function Temp01() {
     return <Companies id/>
 }
 
-export default Task01;
+export default Temp01;
