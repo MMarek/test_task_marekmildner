@@ -2,17 +2,17 @@
 
 
 // import React, {Component} from "react";
-// import people from "./people";
+// import api from "https://recruitment.hal.skygate.io/companies";
 //
-// class Iteration extends Component {
+// class Table extends Component {
 //     render() {
-//         let peopleJsx = people.map(p =>
-//             <div key={p.title}>
-//                 <h1>{p.title}  {p.name}  {p.surname}</h1>
-//                 <p>{p.bio}</p>
+//         let api = api.map(p =>
+//             <div key={p.data}>
+//                 <h1>{p.id}  {p.name}  {p.city}</h1>
+//                 {/*<p>{p.bio}</p>*/}
 //             </div>
 //         );
-//         return peopleJsx;
+//         return api;
 //     }
 // }
 //
@@ -24,9 +24,22 @@
 
 
 import React, {Component} from "react";
-import api from "https://recruitment.hal.skygate.io/companies";
+// import api from "https://recruitment.hal.skygate.io/companies";
 
 class Companies extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: null,
+        };
+    }
+    componentDidMount() {
+        fetch('https://recruitment.hal.skygate.io/companies')
+            .then(response => response.json())
+            .then(data => this.setState({ data }));
+    }
+
     render() {
         return (
             <thead style={{textAlign: 'left'}}>
@@ -44,7 +57,7 @@ class CompaniesItems extends Component{
     render() {
         return(
             <tbody>
-            {api.map((item) =>
+            {this.data().map((item) =>
                 <CompaniesItem {...item} key={item.code}/>
             )}
             </tbody>
@@ -68,21 +81,21 @@ class CompaniesItem extends Component{
 // class CompaniesFooter extends Component{
 //     render() {
 //         return (
-            {/*<tfoot>*/}
-            {/*<tr>*/}
+//             {/*<tfoot>*/}
+//             {/*<tr>*/}
             // </tr>
             // </tfoot>
         // )
     // }
 // }
 
-class Companies extends Component{
+class CompaniesPart extends Component{
     render() {
         return(
             <table style={{width: '40vw'}}>
-                <ReceiptHeader/>
-                <ReceiptItems/>
-                <ReceiptFooter/>
+                <Companies/>
+                <CompaniesItems/>
+                {/*<CompaniesFooter/>*/}
             </table>
         )
     }
@@ -90,7 +103,7 @@ class Companies extends Component{
 
 class table extends Component{
     render() {
-        return <Companies/>
+        return <Table/>
     }
 }
 
