@@ -19,11 +19,11 @@
 // export default Iteration;
 
 
-
 // import tablicy
 
 
 import React, {Component} from "react";
+
 // import api from "https://recruitment.hal.skygate.io/companies";
 
 class Companies extends Component {
@@ -34,10 +34,16 @@ class Companies extends Component {
             data: null,
         };
     }
+
     componentDidMount() {
         fetch('https://recruitment.hal.skygate.io/companies')
             .then(response => response.json())
-            .then(data => this.setState({ data }));
+            .then(data => this.setState({data}));
+            // .then(id => {
+            //     console.log('ID', id)
+            // })
+            // .catch(err => err.log(err));
+
     }
 
     render() {
@@ -53,9 +59,9 @@ class Companies extends Component {
     }
 }
 
-class CompaniesItems extends Component{
+class CompaniesItems extends Component {
     render() {
-        return(
+        return (
             <tbody>
             {this.data().map((item) =>
                 <CompaniesItem {...item} key={item.code}/>
@@ -65,7 +71,7 @@ class CompaniesItems extends Component{
     }
 }
 
-class CompaniesItem extends Component{
+class CompaniesItem extends Component {
     render() {
         const {id, name, city} = this.props;
         return (
@@ -83,15 +89,15 @@ class CompaniesItem extends Component{
 //         return (
 //             {/*<tfoot>*/}
 //             {/*<tr>*/}
-            // </tr>
-            // </tfoot>
-        // )
-    // }
+// </tr>
+// </tfoot>
+// )
+// }
 // }
 
-class CompaniesPart extends Component{
+class CompaniesPart extends Component {
     render() {
-        return(
+        return (
             <table style={{width: '40vw'}}>
                 <Companies/>
                 <CompaniesItems/>
@@ -101,9 +107,9 @@ class CompaniesPart extends Component{
     }
 }
 
-class table extends Component{
+class table extends Component {
     render() {
-        return <Table/>
+        return <CompaniesPart/>
     }
 }
 

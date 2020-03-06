@@ -19,11 +19,6 @@ class ButtonCounter extends Component{
         })
     };
 
-    increaseCounter2 = () => {
-        this.setState({
-            counter: 0
-        })
-    };
 
     render() {
         return (
@@ -31,7 +26,6 @@ class ButtonCounter extends Component{
                 <h1>{this.state.counter}</h1>
                 <ButtonToClick counterEvent={this.increaseCounter}/>
                 <ButtonToClick counterEvent={this.increaseCounter1}/>
-                <ButtonToClick counterEvent={this.increaseCounter2}/>
             </>
         )
     }
@@ -49,37 +43,37 @@ class ButtonToClick extends Component{
     }
 }
 
-function Task16() {
+function sort_button() {
     return <ButtonCounter/>
 }
 
-export default Task16;
+export default sort_button();
 
 
 
 // yes/no button
 
 
-import React, {Component} from "react";
-
-class CheckBox extends Component{
-    state = {
-        checked: false
-    };
-
-    handleClick = () => {
-        this.setState({
-            checked: !this.state.checked
-        })
-    };
-
-    render() {
-        return <button onClick={this.handleClick}>{this.state.checked ? "TAK" : "NIE"}</button>
-    }
-}
-
-function YesNo() {
-    return <CheckBox/>
-}
-
-export default yesNo;
+// import React, {Component} from "react";
+//
+// class CheckBox extends Component{
+//     state = {
+//         checked: false
+//     };
+//
+//     handleClick = () => {
+//         this.setState({
+//             checked: !this.state.checked
+//         })
+//     };
+//
+//     render() {
+//         return <button onClick={this.handleClick}>{this.state.checked ? "TAK" : "NIE"}</button>
+//     }
+// }
+//
+// function sort_button() {
+//     return <CheckBox/>
+// }
+//
+// export default sort_button();
