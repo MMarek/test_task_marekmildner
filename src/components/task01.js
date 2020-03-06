@@ -95,21 +95,32 @@ class Companies extends Component {
         this.loadInfo(this.state.id);
     }
 
-    loadInfo() {
+    loadInfo(id) {
         fetch('https://recruitment.hal.skygate.io/companies')
             .then(response => {
-                if (response.ok) {
-                    console.log(response.id);
-                    return response.json()
-                } else {
-                    throw new Error('Error during fetching data');
-                }
-            })
+                response.text()
+                .then( id => {
+                    console.log('ID', id)
+                })
+            });
+                // console.log(response);
+                // if (response.ok) {
+                //     console.log(response.id);
+
+
+
+
+                //     return response.json()
+                // } else {
+                //     throw new Error('Error during fetching data');
+                // }
+            // })
+            // .then()
                 // console.log(response.id);
                 // console.log(response.name);
                 // console.log(response.city);
             // })
-            .catch(err => err.log(err))
+            // .catch(err => err.log(err))
     }
 
 
@@ -158,7 +169,7 @@ class TableForm extends Component {
 
 
 function Task01() {
-    return <Companies id='82'/>
+    return <Companies id/>
 }
 
 export default Task01;
