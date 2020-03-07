@@ -54,26 +54,26 @@ export default sort_button();
 // yes/no button
 
 
-// import React, {Component} from "react";
-//
-// class CheckBox extends Component{
-//     state = {
-//         checked: false
-//     };
-//
-//     handleClick = () => {
-//         this.setState({
-//             checked: !this.state.checked
-//         })
-//     };
-//
-//     render() {
-//         return <button onClick={this.handleClick}>{this.state.checked ? "TAK" : "NIE"}</button>
-//     }
-// }
-//
-// function sort_button() {
-//     return <CheckBox/>
-// }
-//
-// export default sort_button();
+import React, {Component} from "react";
+
+class CheckBox extends Component{
+    state = {
+        checked: false
+    };
+
+    handleClick = () => {
+        this.setState({
+            checked: !this.state.checked
+        })
+    };
+
+    render() {
+        return <button onClick={this.handleClick}>{this.state.checked ? "TAK" : "NIE"}</button>
+    }
+}
+
+function sort_button() {
+    return <CheckBox/>
+}
+
+export default sort_button();

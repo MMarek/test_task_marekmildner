@@ -2,7 +2,18 @@ import React, {Component} from "react";
 
 class Main extends Component {
     state = {
-        data: []
+        data: [],
+        sort: null
+    };
+
+    handleClickId = () => {
+        if (this.state.sort === null) {
+            this.setState({sort: 1})
+        }else if(this.state.sort === 1) {
+            this.setState({sort: 2})
+        }else if (this.state.sort === 2) {
+            this.setState({sort: 1})
+        }
     };
 
     componentDidMount() {
@@ -14,13 +25,15 @@ class Main extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(this.state.data[32]);
+        console.log(this.state.sort);
     }
 
 
     render() {
+        const {data} = this.state;
+
         return (
-            <CompaniesItem data={this.state.data}/>
+            <CompaniesItem data={data} click={this.handleClickId}/>
         )
     }
 }
@@ -34,7 +47,7 @@ class CompaniesItem extends Component {
             <table>
                     <thead>
                     <tr>
-                        <th>ID</th>
+                        <th onClick={this.props.click}>ID</th>
                         <th>NAME</th>
                         <th>CITY</th>
                     </tr>
