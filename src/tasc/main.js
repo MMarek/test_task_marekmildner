@@ -28,9 +28,26 @@ class Main extends Component {
 
 class CompaniesItem extends Component {
     render() {
-        const {id, name, city} = this.props.data[32];
+        let data = this.props.data;
+        // const {id, name, city} = this.props.data[32];
         return (
-            <h1></h1>
+            <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>CITY</th>
+                    </tr>
+                    </thead>
+                <tbody>
+                {data.map(item =>
+                    <tr key={item.id}>
+                        <th>{item.id}</th>
+                        <th>{item.name}</th>
+                        <th>{item.city}</th>
+                    </tr>)}
+                </tbody>
+            </table>
         );
     }
 }
