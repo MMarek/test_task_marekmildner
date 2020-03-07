@@ -74,53 +74,58 @@ class Companies extends Component {
     state = {
         // id: this.props.id,
         // name: this.props.name,
-        // city: this.props.city,
+        // city: this.props.city
         // totalIncome: this.props.totalIncome,
         // averageIncome: this.props.averageIncome,
         // lastMonthIncome: this.props.lastMonthIncome
 
-        id: null,
-        name: null,
-        city: null,
+        // id: null,
+        // name: null,
+        // city: null,
         // totalIncome: null,
         // averageIncome: null,
         // lastMonthIncome: null
     };
 
     showId = (id) => {
-        this.loadInfo(id);
+        // this.loadInfo(id);
     };
 
     componentDidMount() {
-        this.loadInfo(this.state.id);
+        this.loadInfo();
     }
 
     loadInfo(id) {
         fetch('https://recruitment.hal.skygate.io/companies')
+            .then(response =>
+                response.json())
             .then(response => {
-                response.text()
-                .then( id => {
-                    console.log('ID', id)
-                })
-            });
-                // console.log(response);
-                // if (response.ok) {
-                //     console.log(response.id);
+                // console.log('ID', table[2])
+                console.log(response);
+                // console.log(response.status);
+                // console.log(response.statusText);
+                // console.log(response.type);
+                // console.log(response.url);
+
+                // console.log(response.body);
+            })
+        // });
+        // console.log(response);
+        // if (response.ok) {
+        //     console.log(response.id);
 
 
-
-
-                //     return response.json()
-                // } else {
-                //     throw new Error('Error during fetching data');
-                // }
-            // })
-            // .then()
-                // console.log(response.id);
-                // console.log(response.name);
-                // console.log(response.city);
-            // })
-            // .catch(err => err.log(err))
+        //     return response.json()
+        // } else {
+        //     throw new Error('Error during fetching data');
+        // }
+        // })
+        // .then()
+        // console.log(response.id);
+        // console.log(response.name);
+        // console.log(response.city);
+        // })
+        // .catch(err => err.log(err))
     }
 
 

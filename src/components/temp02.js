@@ -3,8 +3,16 @@ import React from "react";
 export default class FetchId extends React.Component {
     state = {
         loading: true,
-        city: null
+        city: true
     };
+
+    // componentDidMount() {
+    //     fetch('https://recruitment.hal.skygate.io/companies')
+    //         .then(response => response.json())
+    //         .then(data => this.setState({ data }));
+    // }   ??
+
+
 
     async componentDidMount() {
         const url = "https://recruitment.hal.skygate.io/companies";
