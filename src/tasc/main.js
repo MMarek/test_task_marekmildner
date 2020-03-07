@@ -2,28 +2,38 @@ import React, {Component} from "react";
 
 class Main extends Component {
     state = {
-        data: null
+        data: []
     };
 
     componentDidMount() {
         fetch('https://recruitment.hal.skygate.io/companies')
             .then(response => response.json())
-            .then(response => {console.log(response)})
+            // .then(response => {console.log(response)})
             .then(data => this.setState({data}))
             .catch(err => err.log(err));
-            }
+    }
 
-
-        render()
-        {
-            return (
-                <h1>Dupa</h1>
-            )
-        }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(this.state.data[32]);
     }
 
 
+    render() {
+        return (
+            <CompaniesItem data={this.state.data}/>
+        )
+    }
+}
 
-    export
-    default
-    Main;
+
+class CompaniesItem extends Component {
+    render() {
+        const {id, name, city} = this.props.data[32];
+        return (
+            <h1></h1>
+        );
+    }
+}
+
+
+export default Main;
