@@ -12,21 +12,24 @@ class Companies extends Component {
                 response.json())
             .then(response => {
                 console.log(response);
-
             })
+            .then(data => this.setState({data}));
     }
 
     render() {
         return (
-            <>
-            </>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>City</th>
+                </tr>
         )
     }
 }
 
-
-function Temp01() {
+function Task01() {
     return <Companies/>
 }
 
-export default Temp01;
+export default Task01;
