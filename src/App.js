@@ -1,17 +1,11 @@
 import React from 'react';
 import './App.css';
-import {
-    HashRouter,
-    Route,
-} from 'react-router-dom';
+import Main from './tasc/main'
 
-import Home from "./components/home"
 
 function App() {
     return (
-        <HashRouter>
-            <Route exact path='/' component={Home}/>
-        </HashRouter>
+        <Main/>
     );}
 
 export default App;

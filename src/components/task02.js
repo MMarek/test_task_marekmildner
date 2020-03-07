@@ -11,6 +11,28 @@ class CompaniesImport extends Component {
     }
 
 
+
+
+    componentDidMount() {
+        this.loadInfo();
+    }
+
+    loadInfo(id) {
+        fetch('https://recruitment.hal.skygate.io/companies')
+            .then(response =>
+                response.json())
+            .then(response => {
+                console.log(response);
+            })
+            .then(data => this.setState({data}));
+    }
+
+
+
+
+
+
+
     render() {
         return (
             <thead style={{textAlign: 'left'}}>

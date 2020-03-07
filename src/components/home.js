@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Task from "./task";
+// import Task from "./task";
 import Task02 from "./task02";
 // import Temp01 from "./temp";
 // import Temp02 from "./temp02";
@@ -14,7 +14,7 @@ class Home extends Component{
     render() {
         return (
             <>
-                <Task/>
+                {/*<Task/>*/}
                 <Task02/>
                 {/*<Temp01/>*/}
                 {/*<Temp02/>*/}
