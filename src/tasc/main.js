@@ -11,21 +11,19 @@ class Main extends Component {
         namesPerPage: 20
     };
 
-
     handleClick = (event, i) => {
         this.setState({
             currentPage: i
         })
     };
 
-
     handleClickId = () => {
         if (this.state.sort === null) {
-            this.setState({sort: 1})
+            this.setState({sort: 1}); this.sortArrayUp(this.state.data,'id')
         } else if (this.state.sort === 1) {
-            this.setState({sort: 2})
+            this.setState({sort: 2}); this.sortArrayDown(this.state.data,'id')
         } else if (this.state.sort === 2) {
-            this.setState({sort: 1})
+            this.setState({sort: 1}); this.sortArrayUp(this.state.data,'id')
         }
     };
 
@@ -41,11 +39,21 @@ class Main extends Component {
         console.log(this.state.sort);
     }
 
+    sortArrayUp = (array, value) => {
+        array.sort(function (a, b, value) {
+            return a.value - b.value;
+        });
+        return array
+    };
+
+    sortArrayDown = (array, value) => {
+        array.sort(function (a, b, value) {
+            return b.value - a.value;
+        });
+        return array
+    };
 
     render() {
-
-        // const {data} = this.state;
-
 
         const {data, currentPage, namesPerPage} = this.state; // destrukturyzacja do paginacji
         const indexOfLast = currentPage * namesPerPage;
@@ -67,8 +75,8 @@ class Main extends Component {
         for (let i = 1; i <= Math.ceil(data.length / namesPerPage); i++) {
             {
                 const element = <button key={i}
-                                    onClick={e => this.handleClick(e, i)}
-                                    className={this.state.currentPage === i ? 'active' : ''}
+                                        onClick={e => this.handleClick(e, i)}
+                                        className={this.state.currentPage === i ? 'active' : ''}
                 >
                     {i} </button>;
                 pageNumbers.push(element)
@@ -76,19 +84,14 @@ class Main extends Component {
         }
 
 
-
-
-
         return (
             <>
-                {/*<CompaniesItem data={data} click={this.handleClickId}/>*/}
                 <section>
-                    {/*<ul className='names'> {elements} </ul>*/}
 
                     <table>
                         <thead>
                         <tr>
-                            <th onClick={this.props.click}>ID</th>
+                            <th onClick={this.handleClickId}>ID</th>
                             <th>NAME</th>
                             <th>CITY</th>
                         </tr>
@@ -105,39 +108,5 @@ class Main extends Component {
         )
     }
 }
-
-
-class CompaniesItem extends Component {
-    render() {
-
-        let data = this.props.data;
-        // const {id, name, city} = this.props.data[32];
-        return (
-            <>
-                <table>
-                    <thead>
-                    <tr>
-                        <th onClick={this.props.click}>ID</th>
-                        <th>NAME</th>
-                        <th>CITY</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {data.map(item =>
-                        <tr key={item.id}>
-                            <th>{item.id}</th>
-                            <th>{item.name}</th>
-                            <th>{item.city}</th>
-                        </tr>)}
-                    </tbody>
-                </table>
-
-            </>
-
-
-        );
-    }
-}
-
 
 export default Main;
