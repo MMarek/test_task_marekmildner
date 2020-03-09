@@ -1,124 +1,67 @@
 section {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /*background-color: black;*/
-
     font-family: sans-serif;
-    /*box-sizing: border-box;*/
-
-
-
 }
 
+@media screen and (max-width: 600px) {
+    section {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    section {
+        width: 33%;
+    }
+}
+
+
+
+
+
+
+
+
+
 table {
-    /*width: 50%;*/
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /*color: white;*/
     margin-top: 100px;
     margin-bottom: 150px;
 }
 
 th.button {
-    /*width: 100%;*/
-    width: 220px;
-    height: 30px;
+    width: 285px;
+    height: 45px;
+    font-size: 20px;
     padding: 7px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 8px;
-    box-shadow: 1px 1px 2px 2px lightgray;
-    /*margin: 20px;*/
+    background-color: #f7f7f7;
+    border: 3px solid #000000;
+    border-radius: 80px;
+    box-shadow: 1px 1px 4px 4px lightgray;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
 th.button1 {
-    width: 200px;
-/*padding: 20px*/
-/*margin: 30px;*/
-}
-
-th {
-    /*width: 10px;*/
+    width: 300px;
+    height: 40px;
+    background-color: #f7f7f7;
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 1px 1px 2px 2px lightgray;
-}
-
-
-thead tr{
-    /*width: 50%;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: space-between;*/
-    /*cursor: pointer;*/
-    /*margin: 1rem;*/
-    /*font-size: 1.5rem;*/
-    /*line-height: 2rem;*/
-    /*padding: 2rem;*/
-    /*display: flex;*/
-    /*justify-content: space-between;*/
-
-}
-
-thead th {
-    /*justify-content: space-around;*/
-
-    /*border: 3px solid black;*/
-    /*border-radius: 6px;*/
-}
-
-tbody tr{
-    /*border: 1px solid black;*/
-    /*text-align: center;*/
-    /*width: 13rem;*/
-    /*margin: 1rem 3rem;*/
-    /*font-size: 1.5rem;*/
-    /*line-height: 1.5rem;*/
-    /*cursor: pointer;*/
-    /*padding: 2rem 0;*/
-}
-
-tbody th {
-    /*border: 1px solid black;*/
-    /*border-radius: 10px;*/
-}
-
-.button {
-    /*width: 100%;*/
-    /*border: 3px solid black;*/
-    /*border-radius: 6px;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
-
-
-    /*cursor: pointer;*/
-    /*font-family: $font-base;*/
-    /*font-weight: 400;*/
-    /*font-size: 1.125rem;*/
-    /*padding: 0.9375rem 0.8125rem;*/
-    /*margin: 1rem 2.3125rem;*/
-    /*background: transparent;*/
-    /*border: none;*/
-
-
 }
 
 button {
     width: 6%;
     height: 30px;
     padding: 7px;
-    background-color: white;
+    background-color: #f7f7f7;
     border: 1px solid black;
     border-radius: 8px;
-    box-shadow: 1px 1px 2px 2px lightgray;
+    box-shadow: 1px 1px 4px 4px lightgray;
     margin: 10px;
+    cursor: pointer;
 }
 
 

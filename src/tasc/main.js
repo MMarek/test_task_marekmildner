@@ -8,7 +8,7 @@ class Main extends Component {
         sort: null,
 
         currentPage: 1,
-        namesPerPage: 20
+        namesPerPage: 15
     };
 
     handleClick = (event, i) => {
