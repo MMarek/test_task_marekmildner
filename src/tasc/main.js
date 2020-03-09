@@ -19,13 +19,38 @@ class Main extends Component {
 
     handleClickId = () => {
         if (this.state.sort === null) {
-            this.setState({sort: 1}); this.sortArrayUp(this.state.data,'id')
+            this.setState({sort: 1}); this.sortArrayUp(this.state.data)
         } else if (this.state.sort === 1) {
-            this.setState({sort: 2}); this.sortArrayDown(this.state.data,'id')
+            this.setState({sort: 2}); this.sortArrayDown(this.state.data)
         } else if (this.state.sort === 2) {
-            this.setState({sort: 1}); this.sortArrayUp(this.state.data,'id')
+            this.setState({sort: 1}); this.sortArrayUp(this.state.data)
         }
     };
+
+    handleClickName = () => {
+        if (this.state.sort === null) {
+            this.setState({sort: 1}); this.sortNameUp(this.state.data);
+        } else if (this.state.sort === 1) {
+            this.setState({sort: 2}); this.sortNameDown(this.state.data)
+        } else if (this.state.sort === 2) {
+            this.setState({sort: 1}); this.sortNameUp(this.state.data)
+        }
+    };
+
+    handleClickCity = () => {
+        if (this.state.sort === null) {
+            this.setState({sort: 1}); this.sortCityUp(this.state.data);
+        } else if (this.state.sort === 1) {
+            this.setState({sort: 2}); this.sortCityDown(this.state.data)
+        } else if (this.state.sort === 2) {
+            this.setState({sort: 1}); this.sortCityUp(this.state.data)
+        }
+    };
+
+
+
+
+
 
     componentDidMount() {
         fetch('https://recruitment.hal.skygate.io/companies')
@@ -39,19 +64,66 @@ class Main extends Component {
         console.log(this.state.sort);
     }
 
-    sortArrayUp = (array, value) => {
-        array.sort(function (a, b, value) {
-            return a.value - b.value;
+    // sortArrayUp = (array, value) => {
+    //     let newValue = value;
+    //     array.sort(function (a, b, newValue) {
+    //         return a.newValue - b.newValue;
+    //     });
+    //     return array
+    // };
+    //
+    // sortArrayDown = (array, value) => {
+    //     array.sort(function (a, b, value) {
+    //         return b.value - a.value;
+    //     });
+    //     return array
+    // };
+
+
+    sortArrayUp = (array) => {
+        array.sort(function (a, b) {
+            return a.id - b.id;
         });
         return array
     };
 
-    sortArrayDown = (array, value) => {
-        array.sort(function (a, b, value) {
-            return b.value - a.value;
+    sortArrayDown = (array) => {
+        array.sort(function (a, b) {
+            return b.id - a.id;
         });
         return array
     };
+
+    sortNameUp = (array) => {
+        array.sort(function (a, b) {
+            return a.name.localeCompare( b.name );
+        });
+        return array
+    };
+
+    sortNameDown = (array) => {
+        array.sort(function (a, b) {
+            return b.name.localeCompare( a.name );
+        });
+        return array
+    };
+
+    sortCityUp = (array) => {
+        array.sort(function (a, b) {
+            return a.city.localeCompare( b.city );
+        });
+        return array
+    };
+
+    sortCityDown = (array) => {
+        array.sort(function (a, b) {
+            return b.city.localeCompare( a.city );
+        });
+        return array
+    };
+
+
+
 
     render() {
 
@@ -92,8 +164,8 @@ class Main extends Component {
                         <thead>
                         <tr>
                             <th onClick={this.handleClickId}>ID</th>
-                            <th>NAME</th>
-                            <th>CITY</th>
+                            <th onClick={this.handleClickName}>NAME</th>
+                            <th onClick={this.handleClickCity}>CITY</th>
                         </tr>
                         </thead>
                         <tbody>
