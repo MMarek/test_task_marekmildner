@@ -136,9 +136,9 @@ class Main extends Component {
             return (
 
                 <tr key={name.id}>
-                    <th>{name.id}</th>
-                    <th>{name.name}</th>
-                    <th>{name.city}</th>
+                    <th className='button1'>{name.id}</th>
+                    <th className='button1'>{name.name}</th>
+                    <th className='button1'>{name.city}</th>
                 </tr>
             )
         });
@@ -163,15 +163,14 @@ class Main extends Component {
                     <table>
                         <thead>
                         <tr>
-                            <th onClick={this.handleClickId}>ID</th>
-                            <th onClick={this.handleClickName}>NAME</th>
-                            <th onClick={this.handleClickCity}>CITY</th>
+                            <th className='button' onClick={this.handleClickId}>ID</th>
+                            <th className='button' onClick={this.handleClickName}>NAME</th>
+                            <th className='button' onClick={this.handleClickCity}>CITY</th>
                         </tr>
                         </thead>
                         <tbody>
                         {elements}
                         </tbody>
-
                     </table>
 
                     <ul className='numbers'> {pageNumbers} </ul>
