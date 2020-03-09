@@ -1,1 +1,23 @@
+table {
+    width: 100%;
+    /*border: 1px solid black;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
 
+thead {
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+}
+
+thead th {
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+tbody th {
+    border: 1px solid black;
+    border-radius: 10px;
+}
