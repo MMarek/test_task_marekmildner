@@ -10,7 +10,7 @@ Project is created with:
 * Js
 * Css
 
-##Features
+## Features
 - ID, NAME, CITY buttons on the top - sorting table.
 - ID button - `first click` - from the lowest to the biggest number, `second click` - from the biggest to the lowest number.
 - NAME and CITY button - alphabetically sorting - `first click` - A to Z, `second click` - Z to A 
