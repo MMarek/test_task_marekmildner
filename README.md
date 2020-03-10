@@ -37,7 +37,7 @@ $ npm start
 
 or just visit: Live preview.
 ```
-Live preview:
+Live preview: https://mmarek.github.io/test_task_marekmildner/
 
 ## Sources
 This app is made using internet knowlage, also in some parts inspired by the code I write during CodersLab course 
