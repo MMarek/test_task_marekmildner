@@ -3,24 +3,17 @@ section {
     font-family: sans-serif;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 900px) {
     section {
-        width: 50%;
+        width: 100%
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1000px) {
     section {
-        width: 33%;
+        width: 100%;
     }
 }
-
-
-
-
-
-
-
 
 
 table {

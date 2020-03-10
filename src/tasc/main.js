@@ -2,11 +2,9 @@ import React, {Component} from "react";
 
 class Main extends Component {
 
-
     state = {
         data: [],
         sort: null,
-
         currentPage: 1,
         namesPerPage: 15
     };
@@ -47,38 +45,12 @@ class Main extends Component {
         }
     };
 
-
-
-
-
-
     componentDidMount() {
         fetch('https://recruitment.hal.skygate.io/companies')
             .then(response => response.json())
-            // .then(response => {console.log(response)})
             .then(data => this.setState({data}))
             .catch(err => err.log(err));
     }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(this.state.sort);
-    }
-
-    // sortArrayUp = (array, value) => {
-    //     let newValue = value;
-    //     array.sort(function (a, b, newValue) {
-    //         return a.newValue - b.newValue;
-    //     });
-    //     return array
-    // };
-    //
-    // sortArrayDown = (array, value) => {
-    //     array.sort(function (a, b, value) {
-    //         return b.value - a.value;
-    //     });
-    //     return array
-    // };
-
 
     sortArrayUp = (array) => {
         array.sort(function (a, b) {
@@ -122,19 +94,15 @@ class Main extends Component {
         return array
     };
 
-
-
-
     render() {
 
-        const {data, currentPage, namesPerPage} = this.state; // destrukturyzacja do paginacji
+        const {data, currentPage, namesPerPage} = this.state;
         const indexOfLast = currentPage * namesPerPage;
         const indexOfFirst = indexOfLast - namesPerPage;
         const currentData = data.slice(indexOfFirst, indexOfLast);
 
         const elements = currentData.map((name, i) => {
             return (
-
                 <tr key={name.id}>
                     <th className='button1'>{name.id}</th>
                     <th className='button1'>{name.name}</th>
@@ -145,21 +113,19 @@ class Main extends Component {
 
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(data.length / namesPerPage); i++) {
-            {
+
                 const element = <button key={i}
                                         onClick={e => this.handleClick(e, i)}
                                         className={this.state.currentPage === i ? 'active' : ''}
                 >
                     {i} </button>;
                 pageNumbers.push(element)
-            }
-        }
 
+        }
 
         return (
             <>
                 <section>
-
                     <table>
                         <thead>
                         <tr>
@@ -172,7 +138,6 @@ class Main extends Component {
                         {elements}
                         </tbody>
                     </table>
-
                     <ul className='numbers'> {pageNumbers} </ul>
                 </section>
             </>
