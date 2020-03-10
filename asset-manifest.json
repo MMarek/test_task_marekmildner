@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/test_task_marekmildner/static/css/main.bb5e6b1c.chunk.css",
+    "main.js": "/test_task_marekmildner/static/js/main.679f6ef5.chunk.js",
+    "main.js.map": "/test_task_marekmildner/static/js/main.679f6ef5.chunk.js.map",
+    "runtime-main.js": "/test_task_marekmildner/static/js/runtime-main.196e8bc6.js",
+    "runtime-main.js.map": "/test_task_marekmildner/static/js/runtime-main.196e8bc6.js.map",
+    "static/js/2.2b022208.chunk.js": "/test_task_marekmildner/static/js/2.2b022208.chunk.js",
+    "static/js/2.2b022208.chunk.js.map": "/test_task_marekmildner/static/js/2.2b022208.chunk.js.map",
+    "index.html": "/test_task_marekmildner/index.html",
+    "precache-manifest.6003dc5eccae8104f42ede120d3e27f3.js": "/test_task_marekmildner/precache-manifest.6003dc5eccae8104f42ede120d3e27f3.js",
+    "service-worker.js": "/test_task_marekmildner/service-worker.js",
+    "static/css/main.bb5e6b1c.chunk.css.map": "/test_task_marekmildner/static/css/main.bb5e6b1c.chunk.css.map",
+    "static/js/2.2b022208.chunk.js.LICENSE.txt": "/test_task_marekmildner/static/js/2.2b022208.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.196e8bc6.js",
+    "static/js/2.2b022208.chunk.js",
+    "static/css/main.bb5e6b1c.chunk.css",
+    "static/js/main.679f6ef5.chunk.js"
+  ]
+}
