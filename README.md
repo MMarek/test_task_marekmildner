@@ -30,7 +30,7 @@ To clone and run this application, you'll need Git and React installed on your c
 $ cd 
 
 # Install react-app
-$ npx create-react-app ./
+$ npm i
 
 # Run the app
 $ npm start
